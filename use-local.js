@@ -8,7 +8,7 @@ const run = async () => {
 	
 	const file = path.resolve(__dirname,"./ms_06_workflow")
 
-	let spec = await PathLoader.load(
+	const spec = await PathLoader.load(
 		file, 
 		{
 		    processContent: (res, callback) => {
@@ -16,7 +16,6 @@ const run = async () => {
 		    }
 	  	}
 	 )
-
 			
 	let {resolved, refs} = await JsonRefs.resolveRefs(
 		spec,
@@ -36,10 +35,8 @@ const run = async () => {
 			}
 		}
 	)
-
+	
 	console.log(JSON.stringify(resolved, null, " "))
-
-
 }
 
 run()
