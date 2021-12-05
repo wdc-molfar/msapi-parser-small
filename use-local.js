@@ -35,10 +35,6 @@ const run = async () => {
 			}
 		}
 	)
-
-	await fs.writeFile('text.json', JSON.stringify(resolved), (err) => {
-		if (err) throw err
-	})
 	
 	console.log(JSON.stringify(resolved, null, " "))
 }
